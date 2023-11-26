@@ -20,4 +20,9 @@ public class PropertyEntity {
     private String description;
     private Double price;
     private String address;
+//    by default eager fetching(fetching join data when fetching the entity) but to modify to lazy we can do
+//    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
+    @JoinColumn(name = "userId", nullable = false)
+    private UserEntity user;
 }
